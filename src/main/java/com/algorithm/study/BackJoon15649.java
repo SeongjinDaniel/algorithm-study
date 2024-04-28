@@ -1,8 +1,6 @@
 package com.algorithm.study;
 
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  * N과M (1)
@@ -47,6 +45,5 @@ public class BackJoon15649 {
                 visit[i] = false;
             }
         }
-        return;
     }
 }
