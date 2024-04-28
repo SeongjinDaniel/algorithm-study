@@ -1,6 +1,8 @@
 package com.algorithm.study;
 
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * N과M (1)
@@ -8,38 +10,43 @@ import java.util.Scanner;
  */
 public class BackJoon15649 {
 
-    public static int[] arr;
-    public static boolean[] visit;
+    private static int N;
+    private static int M;
+    private static StringBuilder sb;
+    private static boolean[] visit;
+    private static int[] arrays;
 
     public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
+        sb = new StringBuilder();
+        Scanner scanner = new Scanner(System.in);
+        N = scanner.nextInt();
+        M = scanner.nextInt();
 
-        int N = in.nextInt();
-        int M = in.nextInt();
-
-        arr = new int[M];
         visit = new boolean[N];
-        dfs(N, M, 0);
+        arrays = new int[M];
 
+        dfs(0);
+        System.out.println(sb);
     }
 
-    public static void dfs(int N, int M, int depth) {
+    public static void dfs(int depth) {
         if (depth == M) {
-            for (int val : arr) {
-                System.out.print(val + " ");
+            for (int arr : arrays) {
+                sb.append(arr).append(" ");
             }
-            System.out.println();
+            sb.append("\n");
             return;
         }
 
         for (int i = 0; i < N; i++) {
             if (!visit[i]) {
                 visit[i] = true;
-                arr[depth] = i + 1;
-                dfs(N, M, depth + 1);
+                arrays[depth] = i + 1;
+                dfs(depth + 1);
                 visit[i] = false;
             }
         }
+        return;
     }
 }
