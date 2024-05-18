@@ -2,6 +2,9 @@ package com.algorithm.study;
 
 import java.util.*;
 
+/**
+ * 트리의 부모 찾기
+ */
 public class BackJoon11725LinkedList {
     private static int vertex;
     private static boolean[] check;

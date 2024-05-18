@@ -3,6 +3,7 @@ package com.algorithm.study;
 import java.util.*;
 
 /**
+ * 트리의 부모 찾기
  * 런타임 에러
  */
 public class BackJoon11725TwoDimentionalArray {
